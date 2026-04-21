@@ -1,1 +1,4 @@
 project_id = "psqmbyjsvzrjivyjmecr"
+
+[functions.detect-pest]
+verify_jwt = false
