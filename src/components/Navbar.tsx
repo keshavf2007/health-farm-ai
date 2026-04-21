@@ -1,8 +1,10 @@
 import { useState } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
-import { Leaf, Menu, X } from "lucide-react";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
+import { Leaf, Menu, X, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useAuth } from "@/hooks/useAuth";
+import { toast } from "sonner";
 
 const links = [
   { to: "/", label: "Home" },
@@ -18,7 +20,15 @@ const links = [
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
+  const navigate = useNavigate();
+  const { user, signOut } = useAuth();
   const isHome = pathname === "/";
+
+  const handleSignOut = async () => {
+    await signOut();
+    toast.success("Signed out");
+    navigate("/");
+  };
 
   return (
     <header className={cn(
@@ -67,9 +77,20 @@ export const Navbar = () => {
         </nav>
 
         <div className="hidden lg:flex items-center gap-2">
-          <Button asChild variant={isHome ? "glass" : "outline"} size="sm">
-            <Link to="/profile">Sign in</Link>
-          </Button>
+          {user ? (
+            <>
+              <Button asChild variant={isHome ? "glass" : "outline"} size="sm">
+                <Link to="/profile">{user.email?.split("@")[0]}</Link>
+              </Button>
+              <Button variant={isHome ? "glass" : "ghost"} size="sm" onClick={handleSignOut}>
+                <LogOut className="h-4 w-4" />
+              </Button>
+            </>
+          ) : (
+            <Button asChild variant={isHome ? "glass" : "outline"} size="sm">
+              <Link to="/profile">Sign in</Link>
+            </Button>
+          )}
           <Button asChild variant="hero" size="sm">
             <Link to="/detect">Analyze Plant</Link>
           </Button>
@@ -106,7 +127,12 @@ export const Navbar = () => {
                 {l.label}
               </NavLink>
             ))}
-            <Button asChild variant="hero" className="mt-3">
+            {user ? (
+              <Button variant="outline" className="mt-3" onClick={() => { setOpen(false); handleSignOut(); }}>
+                <LogOut className="h-4 w-4" /> Sign out
+              </Button>
+            ) : null}
+            <Button asChild variant="hero" className="mt-2">
               <Link to="/detect" onClick={() => setOpen(false)}>Analyze Plant</Link>
             </Button>
           </nav>
