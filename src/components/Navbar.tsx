@@ -12,7 +12,6 @@ const links = [
   { to: "/dashboard", label: "Dashboard" },
   { to: "/weather", label: "Weather" },
   { to: "/reminders", label: "Reminders" },
-  { to: "/library", label: "Library" },
   { to: "/history", label: "History" },
   { to: "/profile", label: "Profile" },
 ];

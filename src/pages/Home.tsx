@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Bug, CloudSun, Bell, BookOpen, BarChart3, Leaf, Sprout, ShieldCheck } from "lucide-react";
+import { ArrowRight, Bug, CloudSun, Bell, BarChart3, Leaf, Sprout, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-farmland.jpg";
 import { Seo } from "@/components/Seo";
