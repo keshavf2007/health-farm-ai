@@ -22,7 +22,7 @@ const History = () => {
   return (
     <section className="container py-10 md:py-14">
       <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary">History</span>
-      <Seo title="Plant Health & Detection History | AgroGuard AI" description="Review past pest detections, seasonal disease trends and field-by-field plant health records across your farm." path="/history" />
+      <Seo title="Plant Health & Detection History | HealthFarm AI" description="Review past pest detections, seasonal disease trends and field-by-field plant health records across your farm." path="/history" />
       <h1 className="mt-2 font-display text-4xl md:text-5xl font-semibold">Plant Health and Detection History</h1>
       <p className="text-muted-foreground mt-2 mb-10">Past detections, seasonal trends and field-by-field records.</p>
 

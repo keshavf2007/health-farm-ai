@@ -24,14 +24,14 @@ const Home = () => {
   return (
     <>
       <Seo
-        title="AgroGuard AI — Smart Farming & AI Pest Detection"
+        title="HealthFarm AI — Smart Farming & AI Pest Detection"
         description="AI-powered pest detection, soil fertility monitoring, hyperlocal weather and smart crop reminders — all in one dashboard for modern farmers."
         path="/"
         jsonLd={[
           {
             "@context": "https://schema.org",
             "@type": "Organization",
-            name: "AgroGuard AI",
+            name: "HealthFarm AI",
             url: "https://health-farm-ai.lovable.app",
             description:
               "Smart farming platform combining AI pest detection with soil, weather and crop health insights.",
@@ -39,7 +39,7 @@ const Home = () => {
           {
             "@context": "https://schema.org",
             "@type": "WebSite",
-            name: "AgroGuard AI",
+            name: "HealthFarm AI",
             url: "https://health-farm-ai.lovable.app",
           },
         ]}
@@ -112,7 +112,7 @@ const Home = () => {
               Everything your farm needs, in one place.
             </h2>
             <p className="mt-4 text-muted-foreground text-lg">
-              From early disease detection to seasonal trend analysis — AgroGuard AI brings precision agriculture to every grower.
+              From early disease detection to seasonal trend analysis — HealthFarm AI brings precision agriculture to every grower.
             </p>
           </div>
 
@@ -177,7 +177,7 @@ const Home = () => {
                 Protect your harvest before it's too late.
               </h2>
               <p className="mt-4 text-primary-foreground/85 text-lg">
-                Join thousands of growers using AgroGuard AI to make every field more productive and resilient.
+                Join thousands of growers using HealthFarm AI to make every field more productive and resilient.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button asChild variant="glass" size="lg">
