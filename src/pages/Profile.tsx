@@ -90,7 +90,7 @@ const Profile = () => {
         <div className="grid gap-8 lg:grid-cols-3">
           <div className="lg:col-span-2">
             <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary">Profile</span>
-            <Seo title="Your Farm Profile | AgroGuard AI" description="Manage your AgroGuard AI account, farm details and crops, and track your personalized plant health journey." path="/profile" noindex />
+            <Seo title="Your Farm Profile | HealthFarm AI" description="Manage your HealthFarm AI account, farm details and crops, and track your personalized plant health journey." path="/profile" noindex />
         <h1 className="mt-2 font-display text-4xl md:text-5xl font-semibold">Your Farm Profile</h1>
             <p className="text-muted-foreground mt-2 mb-8">Personalize your experience and track your growing journey.</p>
 
@@ -164,8 +164,8 @@ const Profile = () => {
       <div className="grid gap-8 lg:grid-cols-3">
         <div className="lg:col-span-2">
           <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary">Profile</span>
-          <Seo title="Sign In to AgroGuard AI | Smart Farming Account" description="Sign in or create a free AgroGuard AI account to access your farm dashboard, detection history and smart crop reminders." path="/profile" />
-          <h1 className="mt-2 font-display text-4xl md:text-5xl font-semibold">Welcome to AgroGuard AI</h1>
+          <Seo title="Sign In to HealthFarm AI | Smart Farming Account" description="Sign in or create a free HealthFarm AI account to access your farm dashboard, detection history and smart crop reminders." path="/profile" />
+          <h1 className="mt-2 font-display text-4xl md:text-5xl font-semibold">Welcome to HealthFarm AI</h1>
           <p className="text-muted-foreground mt-2 mb-8">
             Sign in to access your personalized dashboard, track detections, and get smart reminders.
           </p>
@@ -208,7 +208,7 @@ const Profile = () => {
           </div>
 
           <h3 className="font-display text-2xl font-semibold mb-1">
-            {tab === "signin" ? "Welcome back" : "Join AgroGuard"}
+            {tab === "signin" ? "Welcome back" : "Join HealthFarm"}
           </h3>
           <p className="text-sm text-muted-foreground mb-6">
             {tab === "signin" ? "Sign in to access your dashboard." : "Create a free account to get started."}

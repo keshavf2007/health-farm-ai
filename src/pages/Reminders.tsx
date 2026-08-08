@@ -32,7 +32,7 @@ const Reminders = () => {
       <div className="flex flex-wrap items-end justify-between gap-4 mb-10">
         <div>
           <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary">Reminders</span>
-          <Seo title="Crop Treatment & Irrigation Reminders | AgroGuard AI" description="Schedule watering, fertilizer and pest control reminders for every field so no crop treatment is ever missed." path="/reminders" />
+          <Seo title="Crop Treatment & Irrigation Reminders | HealthFarm AI" description="Schedule watering, fertilizer and pest control reminders for every field so no crop treatment is ever missed." path="/reminders" />
           <h1 className="mt-2 font-display text-4xl md:text-5xl font-semibold">Crop Treatment and Irrigation Reminders</h1>
           <p className="text-muted-foreground mt-2">Schedule water, fertilizer and pest control tasks across your fields.</p>
         </div>

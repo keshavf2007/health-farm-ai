@@ -146,7 +146,7 @@ const Detect = () => {
 
   return (
     <section className="container py-12 md:py-16">
-      <Seo title="AI Plant Disease & Pest Detection | AgroGuard AI" description="Upload a leaf photo and get instant AI plant disease diagnosis: top 3 ranked pests with confidence scores and treatment plans." path="/detect" />
+      <Seo title="AI Plant Disease & Pest Detection | HealthFarm AI" description="Upload a leaf photo and get instant AI plant disease diagnosis: top 3 ranked pests with confidence scores and treatment plans." path="/detect" />
       <div className="max-w-3xl mb-10">
         <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary">
           Pest Detection

@@ -43,7 +43,7 @@ export const Navbar = () => {
           </div>
           <div className="flex flex-col leading-none">
             <span className={cn("font-display text-lg font-bold tracking-tight", isHome ? "text-primary-foreground" : "text-foreground")}>
-              AgroGuard
+              HealthFarm
             </span>
             <span className={cn("text-[10px] font-semibold tracking-[0.2em] uppercase", isHome ? "text-primary-foreground/70" : "text-primary")}>
               AI

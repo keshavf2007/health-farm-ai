@@ -9,7 +9,7 @@ export const Footer = () => (
           <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-primary">
             <Leaf className="h-5 w-5 text-primary-foreground" />
           </div>
-          <span className="font-display text-xl font-bold">AgroGuard <span className="text-primary">AI</span></span>
+          <span className="font-display text-xl font-bold">HealthFarm <span className="text-primary">AI</span></span>
         </div>
         <p className="text-muted-foreground max-w-md">
           Empowering farmers with AI-driven insights for healthier crops, smarter irrigation, and sustainable harvests.
@@ -34,7 +34,7 @@ export const Footer = () => (
     </div>
     <div className="border-t border-border">
       <div className="container py-5 text-xs text-muted-foreground flex justify-between flex-wrap gap-2">
-        <span>© {new Date().getFullYear()} AgroGuard AI. All rights reserved.</span>
+        <span>© {new Date().getFullYear()} HealthFarm AI. All rights reserved.</span>
         <span>Cultivating a smarter tomorrow 🌱</span>
       </div>
     </div>
