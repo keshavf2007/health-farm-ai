@@ -21,11 +21,37 @@ const Library = () => {
 
   return (
     <section className="container py-10 md:py-14">
+      <Seo
+        title="Garden Pest & Disease Library | AgroGuard AI"
+        description="Free garden pest identification guide: browse common garden pests and plant diseases with symptoms, affected crops and proven prevention methods."
+        path="/library"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          name: "Garden Pest and Disease Library",
+          description:
+            "A searchable database for garden pest identification, covering common garden pests and plant diseases, their symptoms and prevention.",
+          url: "https://health-farm-ai.lovable.app/library",
+          hasPart: pests.map((p) => ({
+            "@type": "Article",
+            headline: p.name,
+            about: `${p.name} affecting ${p.crops}`,
+            description: p.symptom,
+          })),
+        }}
+      />
       <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary">Pest Library</span>
-      <h1 className="mt-2 font-display text-4xl md:text-5xl font-semibold">Know your enemy.</h1>
-      <p className="text-muted-foreground mt-2 mb-8 max-w-2xl">
-        Browse a comprehensive database of common pests and diseases. Learn symptoms, causes and proven prevention techniques.
+      <h1 className="mt-2 font-display text-4xl md:text-5xl font-semibold">Garden Pest and Disease Library</h1>
+      <p className="text-muted-foreground mt-2 mb-4 max-w-2xl">
+        Garden pest identification made simple. Browse a comprehensive database of common garden pests and plant
+        diseases — learn the symptoms, the crops they affect, and proven prevention techniques.
       </p>
+      <p className="text-muted-foreground mb-8 max-w-2xl text-sm">
+        Not sure what you're looking at? Photograph the affected leaf and our AI compares it against thousands of
+        labelled samples to identify the pest or disease in seconds, ranking the most likely matches with a confidence
+        score and a treatment plan. Use the search below to look up a pest by name or by the crop it attacks.
+      </p>
+
 
       <div className="relative max-w-xl mb-10">
         <Search className="absolute left-5 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
