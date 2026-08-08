@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { CloudSun, Droplets, Wind, Thermometer, Sprout, TrendingUp, TrendingDown, Bug, Leaf, AlertTriangle } from "lucide-react";
+import { CloudSun, Droplets, Wind, Thermometer, Sprout, TrendingUp, TrendingDown, Bug, Leaf, AlertTriangle, MapPin, Radio } from "lucide-react";
 import { LineChart, Line, BarChart, Bar, ResponsiveContainer, XAxis, YAxis, Tooltip, CartesianGrid, RadialBarChart, RadialBar, PolarAngleAxis } from "recharts";
 import { Seo } from "@/components/Seo";
 
@@ -18,6 +18,13 @@ const npk = [
 const pestBreakdown = [
   { name: "Aphids", v: 12 }, { name: "Blight", v: 8 }, { name: "Mites", v: 5 },
   { name: "Rust", v: 7 }, { name: "Wilt", v: 3 },
+];
+
+const fields = [
+  { name: "North Plot", crop: "Tomatoes", area: "4.2 ha", moisture: 72, canopy: 92, sensors: 6, synced: "2 min ago", status: "Healthy", tone: "bg-success/15 text-success" },
+  { name: "River Field", crop: "Wheat", area: "8.5 ha", moisture: 48, canopy: 78, sensors: 9, synced: "5 min ago", status: "Monitor", tone: "bg-warning/15 text-warning" },
+  { name: "East Terrace", crop: "Corn", area: "6.0 ha", moisture: 65, canopy: 88, sensors: 7, synced: "1 min ago", status: "Healthy", tone: "bg-success/15 text-success" },
+  { name: "Greenhouse 2", crop: "Peppers", area: "0.8 ha", moisture: 34, canopy: 64, sensors: 4, synced: "12 min ago", status: "Action needed", tone: "bg-destructive/15 text-destructive" },
 ];
 
 const Card = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
@@ -176,8 +183,63 @@ const Dashboard = () => {
           </div>
         </Card>
       </div>
+
+      {/* Field monitoring */}
+      <div className="mt-12">
+        <div className="flex flex-wrap items-end justify-between gap-3 mb-6">
+          <div>
+            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary">Field Monitoring</span>
+            <h2 className="mt-2 font-display text-3xl font-semibold">Live status across your fields</h2>
+            <p className="text-muted-foreground mt-1 text-sm">Soil moisture, canopy health and sensor uptime per plot.</p>
+          </div>
+          <span className="rounded-full bg-primary/10 text-primary px-4 py-1.5 text-sm font-medium">4 fields monitored</span>
+        </div>
+
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {fields.map((f) => (
+            <Card key={f.name}>
+              <div className="flex items-start justify-between">
+                <div>
+                  <h3 className="font-display text-lg font-semibold">{f.name}</h3>
+                  <p className="text-xs text-muted-foreground flex items-center gap-1 mt-0.5">
+                    <MapPin className="h-3 w-3" /> {f.crop} · {f.area}
+                  </p>
+                </div>
+                <span className={`rounded-full px-2.5 py-1 text-[11px] font-semibold ${f.tone}`}>{f.status}</span>
+              </div>
+
+              <div className="mt-5 space-y-3">
+                {[
+                  { icon: Droplets, label: "Soil moisture", value: `${f.moisture}%`, v: f.moisture },
+                  { icon: Leaf, label: "Canopy health", value: `${f.canopy}%`, v: f.canopy },
+                ].map((m) => (
+                  <div key={m.label}>
+                    <div className="flex items-center justify-between text-xs mb-1.5">
+                      <span className="flex items-center gap-1.5 text-muted-foreground">
+                        <m.icon className="h-3.5 w-3.5" /> {m.label}
+                      </span>
+                      <span className="font-medium">{m.value}</span>
+                    </div>
+                    <div className="h-1.5 rounded-full bg-secondary overflow-hidden">
+                      <div className="h-full bg-gradient-primary rounded-full" style={{ width: `${m.v}%` }} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-5 flex items-center justify-between border-t border-border pt-3 text-xs text-muted-foreground">
+                <span className="flex items-center gap-1.5">
+                  <Radio className="h-3.5 w-3.5 text-success" /> {f.sensors} sensors
+                </span>
+                <span>Synced {f.synced}</span>
+              </div>
+            </Card>
+          ))}
+        </div>
+      </div>
     </section>
   );
 };
+
 
 export default Dashboard;
