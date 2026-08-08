@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
 import { toast } from "sonner";
+import { Seo } from "@/components/Seo";
 
 type Profile = {
   display_name: string | null;
@@ -89,7 +90,8 @@ const Profile = () => {
         <div className="grid gap-8 lg:grid-cols-3">
           <div className="lg:col-span-2">
             <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary">Profile</span>
-            <h1 className="mt-2 font-display text-4xl md:text-5xl font-semibold">Your farm, your story.</h1>
+            <Seo title="Your Farm Profile | AgroGuard AI" description="Manage your AgroGuard AI account, farm details and crops, and track your personalized plant health journey." path="/profile" noindex />
+        <h1 className="mt-2 font-display text-4xl md:text-5xl font-semibold">Your Farm Profile</h1>
             <p className="text-muted-foreground mt-2 mb-8">Personalize your experience and track your growing journey.</p>
 
             <div className="rounded-3xl bg-gradient-card border border-border shadow-soft overflow-hidden">
@@ -162,7 +164,8 @@ const Profile = () => {
       <div className="grid gap-8 lg:grid-cols-3">
         <div className="lg:col-span-2">
           <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary">Profile</span>
-          <h1 className="mt-2 font-display text-4xl md:text-5xl font-semibold">Welcome to AgroGuard.</h1>
+          <Seo title="Sign In to AgroGuard AI | Smart Farming Account" description="Sign in or create a free AgroGuard AI account to access your farm dashboard, detection history and smart crop reminders." path="/profile" />
+          <h1 className="mt-2 font-display text-4xl md:text-5xl font-semibold">Welcome to AgroGuard AI</h1>
           <p className="text-muted-foreground mt-2 mb-8">
             Sign in to access your personalized dashboard, track detections, and get smart reminders.
           </p>
