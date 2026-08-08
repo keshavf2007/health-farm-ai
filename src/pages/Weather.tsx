@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Sun, Cloud, CloudRain, CloudSun, Wind, Droplets, Thermometer, Sunrise, Sunset } from "lucide-react";
 import { AreaChart, Area, ResponsiveContainer, XAxis, Tooltip } from "recharts";
+import { Seo } from "@/components/Seo";
 
 const forecast = [
   { d: "Mon", icon: Sun, hi: 28, lo: 18, cond: "Sunny" },
@@ -21,7 +22,8 @@ const Weather = () => {
   return (
     <section className="container py-10 md:py-14">
       <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary">Weather</span>
-      <h1 className="mt-2 font-display text-4xl md:text-5xl font-semibold">Field forecast</h1>
+      <Seo title="Farm Weather Forecast & Field Conditions | AgroGuard AI" description="Hyperlocal farm weather: 7-day forecast, rainfall, humidity, wind and soil-friendly irrigation timing for your fields." path="/weather" />
+      <h1 className="mt-2 font-display text-4xl md:text-5xl font-semibold">Farm Weather Forecast</h1>
       <p className="text-muted-foreground mt-2 mb-10">Hyperlocal conditions for your farm location.</p>
 
       <div className="grid gap-5 lg:grid-cols-3">
