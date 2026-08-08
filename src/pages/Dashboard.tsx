@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { CloudSun, Droplets, Wind, Thermometer, Sprout, TrendingUp, TrendingDown, Bug, Leaf, AlertTriangle } from "lucide-react";
 import { LineChart, Line, BarChart, Bar, ResponsiveContainer, XAxis, YAxis, Tooltip, CartesianGrid, RadialBarChart, RadialBar, PolarAngleAxis } from "recharts";
+import { Seo } from "@/components/Seo";
 
 const detectionTrend = [
   { m: "Jan", v: 4 }, { m: "Feb", v: 6 }, { m: "Mar", v: 9 }, { m: "Apr", v: 14 },
@@ -37,7 +38,8 @@ const Dashboard = () => {
       <div className="flex flex-wrap items-end justify-between gap-4 mb-10">
         <div>
           <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary">Farm Dashboard</span>
-          <h1 className="mt-2 font-display text-4xl md:text-5xl font-semibold">Good morning, Farmer 🌾</h1>
+          <Seo title="Farm Management Dashboard | AgroGuard AI" description="Monitor soil NPK levels, crop health, weather and pest detection trends across your fields in one farm dashboard." path="/dashboard" noindex />
+          <h1 className="mt-2 font-display text-4xl md:text-5xl font-semibold">Farm Management Dashboard</h1>
           <p className="text-muted-foreground mt-2">Here's a snapshot of your fields today.</p>
         </div>
         <div className="flex gap-2">

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Bug, CloudSun, Bell, BookOpen, BarChart3, Leaf, Sprout, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-farmland.jpg";
+import { Seo } from "@/components/Seo";
 
 const features = [
   { icon: Bug, title: "AI Pest Detection", desc: "Snap a photo and get instant disease identification with treatment plans.", color: "text-destructive" },
@@ -22,6 +23,32 @@ const steps = [
 const Home = () => {
   return (
     <>
+      <Seo
+        title="AgroGuard AI — Smart Farming & AI Pest Detection"
+        description="AI-powered pest detection, soil fertility monitoring, hyperlocal weather and smart crop reminders — all in one dashboard for modern farmers."
+        path="/"
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "AgroGuard AI",
+            url: "https://health-farm-ai.lovable.app",
+            description:
+              "Smart farming platform combining AI pest detection with soil, weather and crop health insights.",
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: "AgroGuard AI",
+            url: "https://health-farm-ai.lovable.app",
+            potentialAction: {
+              "@type": "SearchAction",
+              target: "https://health-farm-ai.lovable.app/library?q={search_term_string}",
+              "query-input": "required name=search_term_string",
+            },
+          },
+        ]}
+      />
       {/* Hero */}
       <section className="relative min-h-[100svh] flex items-center overflow-hidden">
         <div className="absolute inset-0">

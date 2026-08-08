@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Droplets, Sprout, Bug, Plus, Bell, Clock, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { Seo } from "@/components/Seo";
 
 type Reminder = { id: number; type: "water" | "fertilizer" | "pest"; title: string; when: string; field: string; done: boolean };
 
@@ -31,7 +32,8 @@ const Reminders = () => {
       <div className="flex flex-wrap items-end justify-between gap-4 mb-10">
         <div>
           <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary">Reminders</span>
-          <h1 className="mt-2 font-display text-4xl md:text-5xl font-semibold">Never miss a treatment.</h1>
+          <Seo title="Crop Treatment & Irrigation Reminders | AgroGuard AI" description="Schedule watering, fertilizer and pest control reminders for every field so no crop treatment is ever missed." path="/reminders" />
+          <h1 className="mt-2 font-display text-4xl md:text-5xl font-semibold">Crop Treatment and Irrigation Reminders</h1>
           <p className="text-muted-foreground mt-2">Schedule water, fertilizer and pest control tasks across your fields.</p>
         </div>
         <Button variant="hero" size="lg"><Plus /> New reminder</Button>
