@@ -20,7 +20,7 @@ export const Footer = () => (
         <ul className="space-y-2 text-sm">
           <li><Link to="/detect" className="hover:text-primary transition-colors">Pest Detection</Link></li>
           <li><Link to="/dashboard" className="hover:text-primary transition-colors">Dashboard</Link></li>
-          <li><Link to="/library" className="hover:text-primary transition-colors">Pest Library</Link></li>
+          <li><Link to="/weather" className="hover:text-primary transition-colors">Weather</Link></li>
         </ul>
       </div>
       <div>

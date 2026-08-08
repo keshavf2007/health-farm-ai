@@ -11,7 +11,7 @@ import Detect from "./pages/Detect.tsx";
 import Dashboard from "./pages/Dashboard.tsx";
 import Weather from "./pages/Weather.tsx";
 import Reminders from "./pages/Reminders.tsx";
-import Library from "./pages/Library.tsx";
+
 import History from "./pages/History.tsx";
 import Profile from "./pages/Profile.tsx";
 import NotFound from "./pages/NotFound.tsx";
@@ -39,7 +39,7 @@ const App = () => (
               />
               <Route path="/weather" element={<Weather />} />
               <Route path="/reminders" element={<Reminders />} />
-              <Route path="/library" element={<Library />} />
+              
               <Route path="/history" element={<History />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="*" element={<NotFound />} />

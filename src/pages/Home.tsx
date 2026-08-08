@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Bug, CloudSun, Bell, BookOpen, BarChart3, Leaf, Sprout, ShieldCheck } from "lucide-react";
+import { ArrowRight, Bug, CloudSun, Bell, BarChart3, Leaf, Sprout, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-farmland.jpg";
 import { Seo } from "@/components/Seo";
@@ -10,7 +10,7 @@ const features = [
   { icon: Sprout, title: "Soil Fertility", desc: "Monitor pH, NPK levels and receive personalized improvement suggestions.", color: "text-primary" },
   { icon: CloudSun, title: "Weather Forecast", desc: "Hyperlocal weather, humidity and rainfall predictions for your farm.", color: "text-warning" },
   { icon: Bell, title: "Smart Reminders", desc: "Watering, fertilizer and pest control alerts right when you need them.", color: "text-earth" },
-  { icon: BookOpen, title: "Pest Library", desc: "Searchable database of pests and diseases with prevention guides.", color: "text-soil" },
+  { icon: ShieldCheck, title: "Treatment Plans", desc: "Actionable, crop-specific treatment and prevention guidance.", color: "text-soil" },
   { icon: BarChart3, title: "History & Trends", desc: "Track seasonal patterns to plan smarter for the next season.", color: "text-primary" },
 ];
 
@@ -41,11 +41,6 @@ const Home = () => {
             "@type": "WebSite",
             name: "AgroGuard AI",
             url: "https://health-farm-ai.lovable.app",
-            potentialAction: {
-              "@type": "SearchAction",
-              target: "https://health-farm-ai.lovable.app/library?q={search_term_string}",
-              "query-input": "required name=search_term_string",
-            },
           },
         ]}
       />
