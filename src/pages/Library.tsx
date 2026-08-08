@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Search, Bug, AlertTriangle, ShieldCheck } from "lucide-react";
+import { Seo } from "@/components/Seo";
+
 
 const pests = [
   { name: "Aphids", crops: "Most crops", severity: "Medium", symptom: "Curling leaves, sticky residue, stunted growth.", prevention: "Introduce ladybugs; spray neem oil weekly.", color: "from-warning/30 to-warning/5" },

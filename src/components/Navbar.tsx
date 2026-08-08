@@ -82,9 +82,10 @@ export const Navbar = () => {
               <Button asChild variant={isHome ? "glass" : "outline"} size="sm">
                 <Link to="/profile">{user.email?.split("@")[0]}</Link>
               </Button>
-              <Button variant={isHome ? "glass" : "ghost"} size="sm" onClick={handleSignOut}>
+              <Button variant={isHome ? "glass" : "ghost"} size="sm" onClick={handleSignOut} aria-label="Sign out">
                 <LogOut className="h-4 w-4" />
               </Button>
+
             </>
           ) : (
             <Button asChild variant={isHome ? "glass" : "outline"} size="sm">
