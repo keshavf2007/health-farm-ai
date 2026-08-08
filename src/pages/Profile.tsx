@@ -75,6 +75,24 @@ const Profile = () => {
     navigate(from, { replace: true });
   };
 
+  const handleGoogleSignIn = async () => {
+    setSubmitting(true);
+    const result = await lovable.auth.signInWithOAuth("google", {
+      redirect_uri: window.location.origin,
+    });
+    setSubmitting(false);
+    if (result.error) {
+      toast.error(result.error.message ?? "Google sign-in failed");
+      return;
+    }
+    if (result.redirected) {
+      // Browser is redirecting to Google; stop here.
+      return;
+    }
+    toast.success("Welcome!");
+    navigate(from, { replace: true });
+  };
+
   if (loading) {
     return (
       <section className="container py-20 flex justify-center">
